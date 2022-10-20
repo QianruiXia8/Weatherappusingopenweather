@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         atYourService = findViewById(R.id.atYourServiceButton);
 
         atYourService.setOnClickListener(view -> {
-            Intent aboutMeIntent = new Intent(view.getContext(), AtYourService.class);
-            view.getContext().startActivity(aboutMeIntent);
+            Intent atYourServiceIntent = new Intent(view.getContext(), AtYourService.class);
+            view.getContext().startActivity(atYourServiceIntent);
         });
     }
 
