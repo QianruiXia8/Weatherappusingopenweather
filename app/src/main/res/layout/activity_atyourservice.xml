@@ -94,42 +94,43 @@
         android:id="@+id/textInputLayout"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
+        app:boxBackgroundColor="#F3F3F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.418">
+        app:layout_constraintVertical_bias="0.498">
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInputEditText"
         android:layout_width="258dp"
-        android:layout_height="39dp"
+        android:layout_height="48dp"
         android:hint="hint"
         android:text="Enter a location"
         android:textColor="#BDB5B5"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/TV_2"
         app:layout_constraintTop_toBottomOf="@+id/TV_1"
         app:layout_constraintVertical_bias="0.046" />
 
     <TextView
         android:id="@+id/TV_2"
-        android:layout_width="83dp"
-        android:layout_height="36dp"
+        android:layout_width="91dp"
+        android:layout_height="48dp"
         android:text="Location:"
         android:textSize="20sp"
-        android:textStyle="normal"
+        android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintHorizontal_bias="0.018"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TV_1"
-        app:layout_constraintVertical_bias="0.054" />
+        app:layout_constraintVertical_bias="0.058" />
 
     <CheckBox
         android:id="@+id/checkBox_1"
@@ -150,10 +151,10 @@
         android:text="Search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintHorizontal_bias="0.017"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TV_2"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintVertical_bias="0.235" />
 
     <Button
         android:id="@+id/b_2"
