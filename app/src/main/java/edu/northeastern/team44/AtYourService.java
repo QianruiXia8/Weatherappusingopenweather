@@ -101,6 +101,38 @@ public class AtYourService extends AppCompatActivity {
                                         String iconUrl = "http://openweathermap.org/img/w/01d.png";
                                         Picasso.get().load(iconUrl).into(imageView);
                                     }
+                                    if(description.equals("few clouds")){
+                                        String iconUrl = "http://openweathermap.org/img/w/02d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("scattered clouds")){
+                                        String iconUrl = "http://openweathermap.org/img/w/03d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("broken clouds")){
+                                        String iconUrl = "http://openweathermap.org/img/w/04d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("shower rain")){
+                                        String iconUrl = "http://openweathermap.org/img/w/09d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("rain")){
+                                        String iconUrl = "http://openweathermap.org/img/w/10d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("thunderstorm")){
+                                        String iconUrl = "http://openweathermap.org/img/w/11d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("snow")){
+                                        String iconUrl = "http://openweathermap.org/img/w/13d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("mist")){
+                                        String iconUrl = "http://openweathermap.org/img/w/50d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
                                     progressBar.setVisibility(View.GONE);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
