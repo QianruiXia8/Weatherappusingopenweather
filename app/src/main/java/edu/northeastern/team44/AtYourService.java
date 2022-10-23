@@ -99,7 +99,7 @@ public class AtYourService extends AppCompatActivity {
                                     Result.setText(output);
                                     if (description.equals("clear sky")){
                                         String iconUrl = "http://openweathermap.org/img/w/01d.png";
-                                        Picasso.with(context).load(iconUrl).into(imageView);
+                                        Picasso.get().load(iconUrl).into(imageView);
                                     }
                                     progressBar.setVisibility(View.GONE);
                                 } catch (JSONException e) {
