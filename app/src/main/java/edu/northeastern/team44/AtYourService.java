@@ -35,6 +35,8 @@ public class AtYourService extends AppCompatActivity {
         Result = findViewById(R.id.TV_4);
     }
 
+
+
     public void getWeatherDetails(View view) {
         String url1 = "";
         String city = location.getText().toString();
