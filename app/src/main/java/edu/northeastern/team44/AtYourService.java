@@ -22,7 +22,7 @@ import org.json.JSONObject;
 import java.text.DecimalFormat;
 
 public class AtYourService extends AppCompatActivity {
-    EditText etCity, etCountry;
+    EditText etCity;
     TextView tvResult;
     private final String url = "https://api.openweathermap.org/data/2.5/weather";
     private final String appid = "5c8a8164830aa07a205ee27ccafbfbc6";
@@ -33,8 +33,6 @@ public class AtYourService extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atyourservice);
-
-
         etCity = findViewById(R.id.input_2);
         tvResult = findViewById(R.id.TV_4);
     }
@@ -68,13 +66,19 @@ public class AtYourService extends AppCompatActivity {
                         JSONObject jsonObjectSys = jsonResponse.getJSONObject("sys");
                         String countryName = jsonObjectSys.getString("country");
                         String cityName = jsonResponse.getString("name");
-                        tvResult.setTextColor(Color.rgb(0,0,0));
-                        String output = "Current weather of " + cityName
+                        tvResult.setTextColor(Color.rgb(128,128,128));
+                        String output = "                        Current weather of " + cityName
+                                + "\n"
                                 + "\n Temp: " + df.format(temp) + " °C"
+                                + "\n"
                                 + "\n Feels Like: " + df.format(feelsLike) + " °C"
+                                + "\n"
                                 + "\n Humidity: " + humidity + "%"
+                                + "\n"
                                 + "\n Description: " + description
+                                + "\n"
                                 + "\n Wind Speed: " + wind + "m/s"
+                                + "\n"
                                 + "\n Cloudiness: " + clouds + "%";
                         tvResult.setText(output);
                     } catch (JSONException e) {
