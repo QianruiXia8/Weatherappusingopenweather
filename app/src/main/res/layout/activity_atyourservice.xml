@@ -9,13 +9,12 @@
         android:id="@+id/input_2"
         android:layout_width="258dp"
         android:layout_height="48dp"
+        android:layout_marginEnd="52dp"
         android:hint="Enter a location"
         android:textColor="#BDB5B5"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/TV_2"
         app:layout_constraintTop_toBottomOf="@+id/TV_1"
         app:layout_constraintVertical_bias="0.134" />
 
@@ -33,34 +32,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/input_1"
-        android:layout_width="258dp"
-        android:layout_height="48dp"
-        android:hint="Enter a country"
-        android:textColor="#BDB5B5"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/TV_2"
-        app:layout_constraintTop_toBottomOf="@+id/TV_1"
-        app:layout_constraintVertical_bias="0.046" />
-
-    <TextView
-        android:id="@+id/TV_2"
-        android:layout_width="91dp"
-        android:layout_height="48dp"
-        android:text="Location:"
-        android:textSize="20sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.018"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_1"
-        app:layout_constraintVertical_bias="0.058" />
 
     <TextView
         android:id="@+id/TV_8"
@@ -80,21 +51,20 @@
         android:id="@+id/b_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="440dp"
+        android:onClick="getWeatherDetails"
         android:text="Search"
-        android:onClick="getWeatherinput"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.017"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_2"
-        app:layout_constraintVertical_bias="0.235" />
+        app:layout_constraintTop_toBottomOf="@+id/TV_8" />
 
     <TextView
         android:id="@+id/TV_4"
         android:layout_width="343dp"
         android:layout_height="256dp"
         android:layout_marginTop="237dp"
-        android:text="Result:"
         android:textSize="16sp"
         android:textStyle="normal|bold"
         app:layout_constraintBottom_toBottomOf="parent"
