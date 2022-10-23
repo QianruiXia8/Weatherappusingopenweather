@@ -29,7 +29,7 @@ public class AtYourService extends AppCompatActivity {
    EditText location1;
     EditText location2;
     TextView result;
-    private final String url = "http://openweathermap.org/api/data/2.5/weather";
+    private final String url = "http://api.openweathermap.org/data/2.5/weather";
     private final String appid ="5c8a8164830aa07a205ee27ccafbfbc6";
 
 
@@ -45,8 +45,8 @@ public class AtYourService extends AppCompatActivity {
 
     public void getWeatherinput(View view) {
         String url1 = "";
-        String location1 = this.location1.getText().toString();
-        String location2 = this.location2.getText().toString();
+        String location1 = this.location1.getText().toString().trim();
+        String location2 = this.location2.getText().toString().trim();
         if (location2.equals("")){
             result.setText("Please enter a valid location");
         }else{
@@ -58,6 +58,7 @@ public class AtYourService extends AppCompatActivity {
             StringRequest stringRequest = new StringRequest(Request.Method.GET, url1, response -> {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
+                    JSONObject jsonResponse = jsonObject.getJSONObject("response");
                     JSONArray jsonArray = jsonObject.getJSONArray("weather");
                     JSONObject jsonObject1 = jsonArray.getJSONObject(0);
                     String main = jsonObject1.getString("main");
@@ -70,8 +71,9 @@ public class AtYourService extends AppCompatActivity {
                     String speed = jsonObject3.getString("speed");
                     String deg = jsonObject3.getString("deg");
                     String all = jsonObject3.getString("all");
-                    String output = "Main: " + main + "\n" + "Description: " + description + "\n" + "Temperature: " + temp + "\n" + "Pressure: " + pressure + "\n" + "Humidity: " + humidity + "\n" + "Speed: " + speed + "\n" + "Deg: " + deg + "\n" + "All: " + all;
-                    result.setText(output);
+                    String output = "Current weather " + main + "\n" + "Description: " + description + "\n" + "Temperature: " + temp + "\n" + "Pressure: " + pressure + "\n" + "Humidity: " + humidity + "\n" + "Speed: " + speed + "\n" + "Deg: " + deg + "\n" + "All: " + all;
+
+                    result.setText("1");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
