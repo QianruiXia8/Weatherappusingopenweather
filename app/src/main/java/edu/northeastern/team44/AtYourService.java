@@ -9,6 +9,7 @@ import java.text.DecimalFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,9 +20,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.squareup.picasso.Picasso;
 
 
 public class AtYourService extends AppCompatActivity {
+    ImageView imageView;
     ProgressBar progressBar;
     EditText location;
     TextView Result;
@@ -39,6 +42,7 @@ public class AtYourService extends AppCompatActivity {
         Result = findViewById(R.id.TV_4);
         b = findViewById(R.id.b_1);
         progressBar = findViewById(R.id.progressbar);
+        imageView = findViewById(R.id.imageView);
         progressBar.setVisibility(View.GONE);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +97,10 @@ public class AtYourService extends AppCompatActivity {
                                             + "\n"
                                             + "\n Cloudiness: " + clouds + "%";
                                     Result.setText(output);
+                                    if (description.equals("clear sky")){
+                                        String iconUrl = "http://openweathermap.org/img/w/01d.png";
+                                        Picasso.with(context).load(iconUrl).into(imageView);
+                                    }
                                     progressBar.setVisibility(View.GONE);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
