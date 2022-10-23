@@ -26,7 +26,7 @@ public class AtYourService extends AppCompatActivity {
     TextView tvResult;
     private final String url = "https://api.openweathermap.org/data/2.5/weather";
     private final String appid = "5c8a8164830aa07a205ee27ccafbfbc6";
-    DecimalFormat df = new DecimalFormat("#.##");
+    DecimalFormat df = new DecimalFormat("#");
 
 
     @Override
@@ -36,26 +36,21 @@ public class AtYourService extends AppCompatActivity {
 
 
         etCity = findViewById(R.id.input_2);
-        etCountry = findViewById(R.id.input_1);
         tvResult = findViewById(R.id.TV_4);
     }
 
     public void getWeatherDetails(View view) {
-        String tempUrl = "";
-        String city = etCity.getText().toString().trim();
-        String country = etCountry.getText().toString().trim();
+        String url1 = "";
+        String city = etCity.getText().toString();
         if(city.equals("")){
-            tvResult.setText("City field can not be empty!");
+            tvResult.setText("Please enter a valid location");
         }else{
-            if(!country.equals("")){
-                tempUrl = url + "?q=" + city + "," + country + "&appid=" + appid;
-            }else{
-                tempUrl = url + "?q=" + city + "&appid=" + appid;
+            url1 = url + "?q=" + city + "&appid=" + appid;
             }
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, tempUrl, new Response.Listener<String>() {
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, url1, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    String output = "";
+
                     try {
                         JSONObject jsonResponse = new JSONObject(response);
                         JSONArray jsonArray = jsonResponse.getJSONArray("weather");
@@ -73,15 +68,14 @@ public class AtYourService extends AppCompatActivity {
                         JSONObject jsonObjectSys = jsonResponse.getJSONObject("sys");
                         String countryName = jsonObjectSys.getString("country");
                         String cityName = jsonResponse.getString("name");
-                        tvResult.setTextColor(Color.rgb(68,134,199));
-                        output += "Current weather of " + cityName + " (" + countryName + ")"
+                        tvResult.setTextColor(Color.rgb(0,0,0));
+                        String output = "Current weather of " + cityName
                                 + "\n Temp: " + df.format(temp) + " °C"
                                 + "\n Feels Like: " + df.format(feelsLike) + " °C"
                                 + "\n Humidity: " + humidity + "%"
                                 + "\n Description: " + description
-                                + "\n Wind Speed: " + wind + "m/s (meters per second)"
-                                + "\n Cloudiness: " + clouds + "%"
-                                + "\n Pressure: " + pressure + " hPa";
+                                + "\n Wind Speed: " + wind + "m/s"
+                                + "\n Cloudiness: " + clouds + "%";
                         tvResult.setText(output);
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -98,4 +92,3 @@ public class AtYourService extends AppCompatActivity {
             requestQueue.add(stringRequest);
         }
     }
-}
