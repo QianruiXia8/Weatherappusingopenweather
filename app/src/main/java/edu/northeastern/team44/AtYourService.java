@@ -2,28 +2,26 @@ package edu.northeastern.team44;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.text.DecimalFormat;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.text.DecimalFormat;
 
 public class AtYourService extends AppCompatActivity {
-    EditText etCity;
-    TextView tvResult;
+    EditText location;
+    TextView Result;
     private final String url = "https://api.openweathermap.org/data/2.5/weather";
     private final String appid = "5c8a8164830aa07a205ee27ccafbfbc6";
     DecimalFormat df = new DecimalFormat("#");
@@ -33,15 +31,15 @@ public class AtYourService extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atyourservice);
-        etCity = findViewById(R.id.input_2);
-        tvResult = findViewById(R.id.TV_4);
+        location = findViewById(R.id.input_2);
+        Result = findViewById(R.id.TV_4);
     }
 
     public void getWeatherDetails(View view) {
         String url1 = "";
-        String city = etCity.getText().toString();
+        String city = location.getText().toString();
         if(city.equals("")){
-            tvResult.setText("Please enter a valid location");
+            Result.setText("Please enter a valid location");
         }else{
             url1 = url + "?q=" + city + "&appid=" + appid;
             }
@@ -57,16 +55,14 @@ public class AtYourService extends AppCompatActivity {
                         JSONObject jsonObjectMain = jsonResponse.getJSONObject("main");
                         double temp = jsonObjectMain.getDouble("temp") - 273.15;
                         double feelsLike = jsonObjectMain.getDouble("feels_like") - 273.15;
-                        float pressure = jsonObjectMain.getInt("pressure");
                         int humidity = jsonObjectMain.getInt("humidity");
                         JSONObject jsonObjectWind = jsonResponse.getJSONObject("wind");
                         String wind = jsonObjectWind.getString("speed");
                         JSONObject jsonObjectClouds = jsonResponse.getJSONObject("clouds");
                         String clouds = jsonObjectClouds.getString("all");
                         JSONObject jsonObjectSys = jsonResponse.getJSONObject("sys");
-                        String countryName = jsonObjectSys.getString("country");
                         String cityName = jsonResponse.getString("name");
-                        tvResult.setTextColor(Color.rgb(128,128,128));
+                        Result.setTextColor(Color.rgb(128,128,128));
                         String output = "                        Current weather of " + cityName
                                 + "\n"
                                 + "\n Temp: " + df.format(temp) + " °C"
@@ -80,7 +76,7 @@ public class AtYourService extends AppCompatActivity {
                                 + "\n Wind Speed: " + wind + "m/s"
                                 + "\n"
                                 + "\n Cloudiness: " + clouds + "%";
-                        tvResult.setText(output);
+                        Result.setText(output);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
