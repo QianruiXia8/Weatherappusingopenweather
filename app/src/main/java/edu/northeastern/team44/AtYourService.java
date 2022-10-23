@@ -133,6 +133,119 @@ public class AtYourService extends AppCompatActivity {
                                         String iconUrl = "http://openweathermap.org/img/w/50d.png";
                                         Picasso.get().load(iconUrl).into(imageView);
                                     }
+                                    if(description.equals("overcast clouds")){
+                                        String iconUrl = "http://openweathermap.org/img/w/04d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("light rain")){
+                                        String iconUrl = "http://openweathermap.org/img/w/10d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("moderate rain")){
+                                        String iconUrl = "http://openweathermap.org/img/w/10d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("heavy intensity rain")){
+                                        String iconUrl = "http://openweathermap.org/img/w/10d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("very heavy rain")){
+                                        String iconUrl = "http://openweathermap.org/img/w/10d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("extreme rain")){
+                                        String iconUrl = "http://openweathermap.org/img/w/10d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("freezing rain")){
+                                        String iconUrl = "http://openweathermap.org/img/w/13d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("light intensity shower rain")){
+                                        String iconUrl = "http://openweathermap.org/img/w/09d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("heavy intensity shower rain")){
+                                        String iconUrl = "http://openweathermap.org/img/w/09d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("ragged shower rain")){
+                                        String iconUrl = "http://openweathermap.org/img/w/09d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("light snow")){
+                                        String iconUrl = "http://openweathermap.org/img/w/13d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("heavy snow")){
+                                        String iconUrl = "http://openweathermap.org/img/w/13d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("sleet")){
+                                        String iconUrl = "http://openweathermap.org/img/w/13d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("shower sleet")){
+                                        String iconUrl = "http://openweathermap.org/img/w/13d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("light rain and snow")){
+                                        String iconUrl = "http://openweathermap.org/img/w/13d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("rain and snow")){
+                                        String iconUrl = "http://openweathermap.org/img/w/13d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("light shower snow")){
+                                        String iconUrl = "http://openweathermap.org/img/w/13d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("shower snow")){
+                                        String iconUrl = "http://openweathermap.org/img/w/13d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("heavy shower snow")){
+                                        String iconUrl = "http://openweathermap.org/img/w/13d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("light intensity drizzle")){
+                                        String iconUrl = "http://openweathermap.org/img/w/09d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("drizzle")){
+                                        String iconUrl = "http://openweathermap.org/img/w/09d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("heavy intensity drizzle")){
+                                        String iconUrl = "http://openweathermap.org/img/w/09d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("light intensity drizzle rain")){
+                                        String iconUrl = "http://openweathermap.org/img/w/09d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("drizzle rain")){
+                                        String iconUrl = "http://openweathermap.org/img/w/09d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("heavy intensity drizzle rain")){
+                                        String iconUrl = "http://openweathermap.org/img/w/09d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("shower rain and drizzle")){
+                                        String iconUrl = "http://openweathermap.org/img/w/09d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("heavy shower rain and drizzle")){
+                                        String iconUrl = "http://openweathermap.org/img/w/09d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+                                    if(description.equals("shower drizzle")){
+                                        String iconUrl = "http://openweathermap.org/img/w/09d.png";
+                                        Picasso.get().load(iconUrl).into(imageView);
+                                    }
+
                                     progressBar.setVisibility(View.GONE);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
