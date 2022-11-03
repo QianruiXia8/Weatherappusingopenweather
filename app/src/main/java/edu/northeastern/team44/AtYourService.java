@@ -29,7 +29,7 @@ public class AtYourService extends AppCompatActivity {
     EditText location;
     TextView Result;
     private final String url = "https://api.openweathermap.org/data/2.5/weather";
-    private final String appid = "5c8a8164830aa07a205ee27ccafbfbc6";
+    private final String appid = "5c8a_16480a0_a2_5_e27_cafb_bc_";
     DecimalFormat df = new DecimalFormat("#");
     Button b;
 
